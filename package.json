@@ -1,0 +1,33 @@
+{
+    "name": "capm",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^6",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.9.7",
+        "@sap/hana-client": "^2.17.14",
+        "express": "^4",
+        "hdb": "^0.19.0"
+    },
+    "devDependencies": {
+        "@sap/hdi-deploy": "4.6.1",
+        "@sap/ux-specification": "^1.96.10",
+        "rimraf": "^3.0.2",
+        "sqlite3": "^5"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-demoui": "cds watch --open demoui/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy capm --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    },
+    "cds": {
+        "requires": {
+            "db": "sql"
+        }
+    }
+}

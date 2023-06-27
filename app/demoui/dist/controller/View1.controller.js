@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("com.demoui.controller.View1",{onInit:function(){},onCreate:function(e){var n=this.getOwnerComponent().getModel();var t={eid:"7676878",ename:"Kapil",city:"hjhjhj"};n.create("/Employee",t,{method:"POST",success:function(e){alert("success")},error:function(e){alert("error")}})}})});

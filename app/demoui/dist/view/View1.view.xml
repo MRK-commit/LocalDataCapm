@@ -1,0 +1,23 @@
+<mvc:View controllerName="com.demoui.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <smarttable:SmartTable id="idPrdLocSmartTable"   tableType="ResponsiveTable" editable="false" entitySet="Employee" useVariantManagement="true" showVariantManagement="true" beforeExport="onBeforeExport"
+            header="" showRowCount="true" enableExport="true" 
+            enableAutoBinding="true" placeToolbarInTable="true" beforeRebindTable="onBeforeRebindTable"   persistencyKey="SmartTablePersistencyKey" >
+                <smarttable:customToolbar>
+						<OverflowToolbar design="Transparent">
+							<ToolbarSpacer/>
+                            <Button text="Upload" press="onUploadExcel"/> 
+                            <Button text="{i18n>UPLOAD_HIS}" press="onUploadStatusPloc"/>
+                        </OverflowToolbar>
+                </smarttable:customToolbar>
+                <Table id="idPrdLocTable"  sticky="ColumnHeaders,HeaderToolbar" growing="true" growingScrollToLoad="true" growingThreshold="500" >
+		
+				</Table>
+        </smarttable:SmartTable>
+        <Button id="id" text="create" press="onCreate"/>
+        </content>
+    </Page>
+</mvc:View>
